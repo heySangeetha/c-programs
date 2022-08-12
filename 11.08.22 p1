@@ -1,0 +1,16 @@
+#include<stdio.h>
+void main()
+{
+  int n,r,pd=1,sd=0,a;
+  printf("enter the number");
+  scanf("%d",&n);
+  while(n>0)
+  {
+    r=n%10;
+    pd=pd*r;
+    sd=sd+r;
+    n=n/10;
+  }
+  a=pd-sd;
+  printf("%d",a);
+}  
