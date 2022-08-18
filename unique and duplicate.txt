@@ -1,0 +1,25 @@
+#include<stdio.h>
+int main()
+{
+	int n,a[500],i,se;
+	printf("enter the number of elements:\n");
+	scanf("%d",&n);
+	printf("enter the array elements:");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	se=a[0];
+	for(i=0;i<n;i++)
+	{
+		if(se!=a[i])
+		{
+			printf("UNIQUE\n");
+			break;
+		}
+	}
+	if(se==a[n-1])
+	{
+		printf("DUPLICATE\n");
+	}
+}
