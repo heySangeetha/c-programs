@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+	int n,a[500],fact,total=0,i;
+	printf("enter the number of elements:\n");
+	scanf("%d",&n);
+	printf("enter the array elements:\n");
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&a[i]);
+	}
+	for(i=0;i<n;i++)
+	{
+		fact=1;
+		if(a[i]==0)
+		{
+			fact=0;
+		}
+		while(a[i]>0)
+		{
+			fact=fact*a[i];
+			a[i]=a[i]-1;
+		}
+		total=total+fact;
+	}
+	printf("%d",total);
+}
