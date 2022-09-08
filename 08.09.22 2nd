@@ -1,0 +1,10 @@
+//https://practice.geeksforgeeks.org/problems/josephus-problem/1?category%5B%5D=Recursion&category%5B%5D=Recursion&page=1&query=category%5B%5DRecursionpage1category%5B%5DRecursion
+int josephus(int n, int k)
+{
+   int name=0;
+   if(n==1)
+   name=1;
+   else
+   name=(josephus(n-1,k)+(k-1))%n+1;
+   return name;
+}
