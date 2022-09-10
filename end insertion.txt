@@ -1,0 +1,68 @@
+
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+int data;
+struct node *ref; 
+};
+struct node *tail;
+void einsert();
+void display();
+void main()
+{
+ einsert();
+ einsert();
+ einsert();
+ einsert();
+ display();
+}
+void display()
+{
+ struct node *ptr;
+ ptr=tail;
+ if(ptr==NULL)
+  printf(" There are no nodes in the list \n");
+ else
+ {
+  printf("Elements in the list are .... \n");
+  while(ptr!=NULL)
+  {
+   printf("%d ",ptr->data);
+   ptr=ptr->ref;
+  }
+ }
+}
+void einsert() // function definition or body
+{
+ struct node *ptr;
+ int ele;
+ ptr=(struct node *)malloc(sizeof(struct node*));
+	
+ if(ptr==NULL)
+  printf(" We can't insert any elements \n");
+ else
+ {
+  printf("Enter any element to insert \n");
+  scanf("%d",&ele);
+  ptr->data=ele;
+  ptr->ref=tail;
+  tail=ptr;
+  printf("Element is inserted successfully \n");
+ }
+}
+OUTPUT:
+Enter any element to insert
+1
+Element is inserted successfully
+Enter any element to insert
+2
+Element is inserted successfully
+Enter any element to insert
+3
+Element is inserted successfully
+Enter any element to insert
+4
+Element is inserted successfully
+Elements in the list are ....
+4 3 2 1
