@@ -1,0 +1,72 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct node
+{
+int data;
+struct node *ref; 
+};
+struct node *head;
+void binsert();
+void search();
+void main()
+{
+ insert();
+ insert();
+ insert();
+ insert();
+ search();
+}
+void search()
+{
+ struct node *ptr;
+ ptr=head;
+ if(ptr==NULL)
+  printf(" There are no nodes in the list \n");
+ else 
+ {
+  printf("Enter the element to search .... \n");
+  int n;
+  scanf("%d",&n);
+  while(ptr!=NULL)
+  {
+    if(ptr->data==n)
+    printf("Element found");
+   ptr=ptr->ref;
+  }
+ }
+}
+
+void insert() 
+{
+ struct node *ptr;
+ int ele;
+ ptr=(struct node *)malloc(sizeof(struct node*));
+	
+ if(ptr==NULL)
+  printf(" We can't insert any elements \n");
+ else
+ {
+  printf("Enter any element to insert \n");
+  scanf("%d",&ele);
+  ptr->data=ele;
+  ptr->ref=head;
+  head=ptr;
+  printf("Element is inserted successfully \n");
+ }
+}
+OUTPUT:
+Enter any element to insert
+1
+Element is inserted successfully
+Enter any element to insert
+2
+Element is inserted successfully
+Enter any element to insert
+3
+Element is inserted successfully
+Enter any element to insert
+4
+Element is inserted successfully
+Enter the element to search ....
+3
+Element found
